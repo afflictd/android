@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/fabNew">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔐 Шифрование текста (AES)"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_marginBottom="24dp"/>
+
+            <EditText
+                android:id="@+id/etInput"
+                android:hint="Введите текст для шифрования"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="100dp"
+                android:gravity="top"
+                android:lines="4"
+                android:layout_marginBottom="16dp"/>
+
+            <EditText
+                android:id="@+id/etKey"
+                android:hint="Ключ шифрования (Base64)"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnEncrypt"
+                    android:text="🔒 Зашифровать"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"/>
+
+                <Button
+                    android:id="@+id/btnDecrypt"
+                    android:text="🔓 Расшифровать"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvOutput"
+                android:text="Зашифрованный текст появится здесь"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="120dp"
+                android:background="#f0f0f0"
+                android:padding="12dp"
+                android:layout_marginTop="16dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabNew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_add"
+        app:tint="@android:color/white" />
+
+</RelativeLayout>
